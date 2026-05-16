@@ -1,0 +1,2 @@
+# namazi
+Gamified prayer tracker 

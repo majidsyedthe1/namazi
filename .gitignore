@@ -1,0 +1,42 @@
+# Xcode build output
+build/
+DerivedData/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+xcuserdata/
+
+# Xcode workspace settings (user-specific)
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/swiftpm/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# CocoaPods (if you add it later)
+Pods/
+Podfile.lock
+
+# Carthage (if you add it later)
+Carthage/Build/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.icloud
+
+# Instruments
+*.trace
+
+# Crashlytics / Firebase (if you add it later)
+crashlytics-build.properties
+GoogleService-Info.plist
+
+# Secrets / environment files
+*.env
+Secrets.swift
+Config.xcconfig

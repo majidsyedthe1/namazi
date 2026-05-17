@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D82D6B82FBA0EDD00EFFC7B /* PrayerEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6B72FBA0EDD00EFFC7B /* PrayerEnums.swift */; };
+		1D82D6BA2FBA0EF400EFFC7B /* PrayerRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6B92FBA0EF400EFFC7B /* PrayerRecord.swift */; };
+		1D82D6BC2FBA0EFB00EFFC7B /* RakatRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6BB2FBA0EFB00EFFC7B /* RakatRecord.swift */; };
+		1D82D6BE2FBA0F0100EFFC7B /* SurahRecitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6BD2FBA0F0100EFFC7B /* SurahRecitation.swift */; };
+		1D82D6C02FBA0F0800EFFC7B /* PostureEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6BF2FBA0F0800EFFC7B /* PostureEvent.swift */; };
+		1D82D6C22FBA0F0F00EFFC7B /* UserPrayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6C12FBA0F0F00EFFC7B /* UserPrayerStats.swift */; };
+		1D82D6C42FBA0F1900EFFC7B /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6C32FBA0F1900EFFC7B /* UserSettings.swift */; };
+		1D82D6C62FBA0F2100EFFC7B /* NotificationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6C52FBA0F2100EFFC7B /* NotificationPreference.swift */; };
+		1D82D6C82FBA0F2800EFFC7B /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6C72FBA0F2800EFFC7B /* Goal.swift */; };
+		1D82D6CB2FBA0FC100EFFC7B /* MockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6CA2FBA0FC100EFFC7B /* MockDataGenerator.swift */; };
+		1D82D6CD2FBA0FD800EFFC7B /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6CC2FBA0FD800EFFC7B /* PreviewContainer.swift */; };
 		A1000001 /* NamaziApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000010 /* NamaziApp.swift */; };
 		A1000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000011 /* ContentView.swift */; };
 		A1000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000012 /* Assets.xcassets */; };
@@ -14,6 +25,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D82D6B72FBA0EDD00EFFC7B /* PrayerEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerEnums.swift; sourceTree = "<group>"; };
+		1D82D6B92FBA0EF400EFFC7B /* PrayerRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRecord.swift; sourceTree = "<group>"; };
+		1D82D6BB2FBA0EFB00EFFC7B /* RakatRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RakatRecord.swift; sourceTree = "<group>"; };
+		1D82D6BD2FBA0F0100EFFC7B /* SurahRecitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahRecitation.swift; sourceTree = "<group>"; };
+		1D82D6BF2FBA0F0800EFFC7B /* PostureEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostureEvent.swift; sourceTree = "<group>"; };
+		1D82D6C12FBA0F0F00EFFC7B /* UserPrayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPrayerStats.swift; sourceTree = "<group>"; };
+		1D82D6C32FBA0F1900EFFC7B /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		1D82D6C52FBA0F2100EFFC7B /* NotificationPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPreference.swift; sourceTree = "<group>"; };
+		1D82D6C72FBA0F2800EFFC7B /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		1D82D6CA2FBA0FC100EFFC7B /* MockDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataGenerator.swift; sourceTree = "<group>"; };
+		1D82D6CC2FBA0FD800EFFC7B /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		A1000005 /* Namazi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Namazi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000010 /* NamaziApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamaziApp.swift; sourceTree = "<group>"; };
 		A1000011 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +54,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D82D6B62FBA0EDD00EFFC7B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D82D6B72FBA0EDD00EFFC7B /* PrayerEnums.swift */,
+				1D82D6B92FBA0EF400EFFC7B /* PrayerRecord.swift */,
+				1D82D6BB2FBA0EFB00EFFC7B /* RakatRecord.swift */,
+				1D82D6BD2FBA0F0100EFFC7B /* SurahRecitation.swift */,
+				1D82D6BF2FBA0F0800EFFC7B /* PostureEvent.swift */,
+				1D82D6C12FBA0F0F00EFFC7B /* UserPrayerStats.swift */,
+				1D82D6C32FBA0F1900EFFC7B /* UserSettings.swift */,
+				1D82D6C52FBA0F2100EFFC7B /* NotificationPreference.swift */,
+				1D82D6C72FBA0F2800EFFC7B /* Goal.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1D82D6C92FBA0FC100EFFC7B /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				1D82D6CA2FBA0FC100EFFC7B /* MockDataGenerator.swift */,
+				1D82D6CC2FBA0FD800EFFC7B /* PreviewContainer.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		A1000030 /* Namazi */ = {
 			isa = PBXGroup;
 			children = (
@@ -39,6 +86,8 @@
 				A1000011 /* ContentView.swift */,
 				A1000012 /* Assets.xcassets */,
 				A1000040 /* Preview Content */,
+				1D82D6B62FBA0EDD00EFFC7B /* Models */,
+				1D82D6C92FBA0FC100EFFC7B /* Mock */,
 			);
 			path = Namazi;
 			sourceTree = "<group>";
@@ -138,7 +187,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1000002 /* ContentView.swift in Sources */,
+				1D82D6CB2FBA0FC100EFFC7B /* MockDataGenerator.swift in Sources */,
+				1D82D6C22FBA0F0F00EFFC7B /* UserPrayerStats.swift in Sources */,
+				1D82D6BE2FBA0F0100EFFC7B /* SurahRecitation.swift in Sources */,
+				1D82D6C02FBA0F0800EFFC7B /* PostureEvent.swift in Sources */,
+				1D82D6CD2FBA0FD800EFFC7B /* PreviewContainer.swift in Sources */,
+				1D82D6C42FBA0F1900EFFC7B /* UserSettings.swift in Sources */,
+				1D82D6C62FBA0F2100EFFC7B /* NotificationPreference.swift in Sources */,
+				1D82D6C82FBA0F2800EFFC7B /* Goal.swift in Sources */,
+				1D82D6B82FBA0EDD00EFFC7B /* PrayerEnums.swift in Sources */,
 				A1000001 /* NamaziApp.swift in Sources */,
+				1D82D6BA2FBA0EF400EFFC7B /* PrayerRecord.swift in Sources */,
+				1D82D6BC2FBA0EFB00EFFC7B /* RakatRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

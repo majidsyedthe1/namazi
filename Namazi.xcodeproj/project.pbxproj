@@ -20,6 +20,7 @@
 		1D82D6CD2FBA0FD800EFFC7B /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6CC2FBA0FD800EFFC7B /* PreviewContainer.swift */; };
 		1D82D6E62FBA6B9700EFFC7B /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6E52FBA6B9700EFFC7B /* LocationService.swift */; };
 		1D82D6E82FBA6BA700EFFC7B /* LocationPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82D6E72FBA6BA700EFFC7B /* LocationPermissionView.swift */; };
+		1D82D6EC2FBA707D00EFFC7B /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = 1D82D6EB2FBA707D00EFFC7B /* Adhan */; };
 		A1000001 /* NamaziApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000010 /* NamaziApp.swift */; };
 		A1000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000011 /* ContentView.swift */; };
 		A1000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000012 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D82D6EC2FBA707D00EFFC7B /* Adhan in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +194,9 @@
 				Base,
 			);
 			mainGroup = A1000032;
+			packageReferences = (
+				1D82D6EA2FBA707D00EFFC7B /* XCRemoteSwiftPackageReference "adhan-swift" */,
+			);
 			productRefGroup = A1000031 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -445,6 +450,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D82D6EA2FBA707D00EFFC7B /* XCRemoteSwiftPackageReference "adhan-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/batoulapps/adhan-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D82D6EB2FBA707D00EFFC7B /* Adhan */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D82D6EA2FBA707D00EFFC7B /* XCRemoteSwiftPackageReference "adhan-swift" */;
+			productName = Adhan;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A1000070 /* Project object */;
 }

@@ -8,7 +8,9 @@ final class SurahRecitation {
 
     var surahNumber: Int = 1
     var surahName: String = ""
+    /// 1 = main surah; 2 = second surah recited in the same rakat (rare).
     var orderInRakat: Int = 1
+    /// When true, `ayahStart` and `ayahEnd` are null. When false, the range is used.
     var isFullSurah: Bool = true
     var ayahStart: Int?
     var ayahEnd: Int?

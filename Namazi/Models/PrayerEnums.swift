@@ -62,6 +62,7 @@ enum RakatType: String, Codable, CaseIterable {
     case witr
 }
 
+// v1 postures only. `itidal` and `tasleem` are deferred — too brief / hard to detect reliably.
 enum PostureType: String, Codable, CaseIterable {
     case qiyam
     case ruku

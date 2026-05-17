@@ -1,17 +1,22 @@
 import Foundation
 import SwiftData
 
+// Progress is always derived from PrayerRecord at query time — never stored here.
+// This keeps progress accurate after iCloud merges without re-computing on every device.
+
 @Model
 final class Goal {
     var id: UUID = UUID()
     var userId: UUID = UUID()
 
+    /// "all" (any prayer) or a specific PrayerName raw value.
     var prayerName: String = "all"
     var metric: String = GoalMetric.completed.rawValue
     var targetValue: Int = 0
     var period: String = GoalPeriod.daily.rawValue
 
     var startDate: Date = Date()
+    /// Null for rolling-period goals (e.g. "weekly forever").
     var endDate: Date?
 
     var isActive: Bool = true

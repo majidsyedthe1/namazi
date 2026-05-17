@@ -1,12 +1,15 @@
 import Foundation
 import SwiftData
 
+// 6 rows total per user — "overall" + 5 daily prayers. Never grows.
+// Recalculation: fast path on new save (increment); safe path on any edit (rebuild from edit date).
+
 @Model
 final class UserPrayerStats {
     var id: UUID = UUID()
     var userId: UUID = UUID()
 
-    // "overall" | "Fajr" | "Dhuhr" | "Asr" | "Maghrib" | "Isha"
+    /// "overall" | "Fajr" | "Dhuhr" | "Asr" | "Maghrib" | "Isha"
     var prayerName: String = "overall"
 
     var currentStreak: Int = 0
@@ -16,6 +19,7 @@ final class UserPrayerStats {
     var totalInJamaat: Int = 0
     var totalQada: Int = 0
 
+    /// Used by the fast-path streak increment to decide "continue vs reset".
     var lastPrayedDate: Date?
     var lastUpdated: Date = Date()
 

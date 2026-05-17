@@ -1,15 +1,20 @@
 import Foundation
 import SwiftData
 
+// Singleton — exactly 1 row per user.
+
 @Model
 final class UserSettings {
     var id: UUID = UUID()
     var userId: UUID = UUID()
 
     var calculationMethod: String = CalculationMethod.ISNA.rawValue
+    /// Affects Asr time — Hanafi calculates Asr later than the other madhabs.
     var madhab: String = Madhab.Hanafi.rawValue
 
+    /// Manually toggled by the user — never auto-detected.
     var isTravelMode: Bool = false
+    /// Enable for Scandinavia / Canada / northern UK where Fajr–Isha can't be computed normally.
     var highLatitudeMode: Bool = false
 
     var latitude: Double = 0
@@ -17,6 +22,7 @@ final class UserSettings {
     var timezone: String = "UTC"
     var city: String = ""
     var country: String = ""
+    /// True = follow GPS; false = user has pinned the location manually.
     var locationAutoDetect: Bool = true
 
     var lastUpdated: Date = Date()

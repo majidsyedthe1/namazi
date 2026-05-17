@@ -1,16 +1,22 @@
 import Foundation
 import SwiftData
 
+// 5 rows total per user — one per daily prayer. Never grows.
+
 @Model
 final class NotificationPreference {
     var id: UUID = UUID()
     var userId: UUID = UUID()
 
     var prayerName: String = ""
+    /// Master on/off for this prayer.
     var enabled: Bool = true
     var timing: String = NotificationTiming.atStart.rawValue
+    /// Ignored when `timing == atStart`.
     var minutesOffset: Int = 0
+    /// False = silent vibration only.
     var soundEnabled: Bool = true
+    /// Must be null when `soundEnabled` is false.
     var adhanSound: String?
 
     init(

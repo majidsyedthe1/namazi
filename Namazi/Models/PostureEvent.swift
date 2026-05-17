@@ -1,6 +1,8 @@
 import Foundation
 import SwiftData
 
+// No `endedAt` field — derive as `startedAt + durationSeconds` when needed.
+
 @Model
 final class PostureEvent {
     var id: UUID = UUID()
@@ -10,7 +12,9 @@ final class PostureEvent {
     var posture: String = PostureType.qiyam.rawValue
     var startedAt: Date = Date()
     var durationSeconds: Int = 0
+    /// Denormalised from RakatRecord so per-rakat aggregations don't need a join.
     var rakahNumber: Int = 1
+    /// Raw gyroscope reading — kept verbatim so the detection algorithm can be retuned later.
     var pitchAngleDegrees: Double = 0
     var detectionSource: String = PostureDetectionSource.watchAuto.rawValue
 

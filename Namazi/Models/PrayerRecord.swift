@@ -7,38 +7,51 @@ final class PrayerRecord {
     var userId: UUID = UUID()
 
     var prayerName: String = ""
+    /// Islamic prayer day — set explicitly so Isha after midnight still belongs to its own day.
     var prayerDate: Date = Date()
 
     var category: String = PrayerCategory.fard.rawValue
+    /// Only set for non-five-daily prayers (Jumuah, Eid, Janazah, …).
     var specialType: String?
 
+    /// Prayer window snapshotted at log time; null for special prayers (Jumuah, Eid, …).
     var windowStart: Date?
     var windowEnd: Date?
 
+    /// When the row was created. May be days after `prayerDate` for Qada makeups.
     var loggedAt: Date = Date()
+    /// Watch-only: actual prayer timing. Null for manual logs.
     var startedAt: Date?
     var endedAt: Date?
     var durationSeconds: Int?
 
     var status: String = PrayerStatus.onTime.rawValue
+    /// Computed against the window and frozen at save time — never recalculated.
     var isOnTime: Bool = true
+    /// True if the user changed the app's suggested status.
     var userOverrodeStatus: Bool = false
 
+    /// `watch` records have rakats + posture events; `manual` records do not.
     var source: String = PrayerSource.manual.rawValue
+    /// Includes Qasr (2 rakats) when travelling — set at log time, not derived.
     var rakats: Int = 4
 
+    /// Snapshotted from UserSettings at log time (travel status can change day-to-day).
     var isTravelling: Bool = false
     var isQada: Bool = false
+    /// The original missed prayer day this Qada is making up.
     var qadaForDate: Date?
 
     var prayedInJamaat: Bool = false
     var locationType: String = LocationType.home.rawValue
 
+    /// GPS snapshotted at log time — kept even if user moves later.
     var latitude: Double?
     var longitude: Double?
     var timezone: String?
 
     var notes: String?
+    /// Used for iCloud conflict resolution (last-writer-wins).
     var updatedAt: Date = Date()
 
     @Relationship(deleteRule: .cascade, inverse: \RakatRecord.prayerRecord)

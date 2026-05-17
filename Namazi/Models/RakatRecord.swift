@@ -9,6 +9,7 @@ final class RakatRecord {
     var rakahNumber: Int = 1
     var type: String = RakatType.fard.rawValue
 
+    /// Watch-only timing for this rakat. Null for manual logs.
     var startedAt: Date?
     var durationSeconds: Int?
 

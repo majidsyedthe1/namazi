@@ -1,17 +1,24 @@
 import SwiftUI
 import SwiftData
 
-// Phase 2: app runs against the in-memory mock container so all UIs render with
-// realistic 12-month data. In Phase 3, swap `PreviewContainer.shared` for a real
-// on-disk ModelContainer.
+// Real persistent SwiftData store. Mock data still lives in PreviewContainer
+// for use inside #Preview blocks.
 
 @main
 struct NamaziApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .preferredColorScheme(.dark)
         }
-        .modelContainer(PreviewContainer.shared)
+        .modelContainer(for: [
+            PrayerRecord.self,
+            RakatRecord.self,
+            SurahRecitation.self,
+            PostureEvent.self,
+            UserPrayerStats.self,
+            UserSettings.self,
+            NotificationPreference.self,
+            Goal.self
+        ])
     }
 }

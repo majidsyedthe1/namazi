@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 // Detail sheet for a single PrayerRecord — shows timing, posture timeline (if Watch),
 // surahs recited, location, notes.

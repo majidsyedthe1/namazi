@@ -85,6 +85,16 @@ enum MockDataGenerator {
                 let windows = PrayerWindowCalculator.windows(for: day, dayOfYear: dayOfYear)
                 guard let window = windows[prayer] else { continue }
 
+                // For "today" only: don't generate records for prayers whose windows
+                // haven't ended yet — those should appear as Pending / Upcoming in the UI.
+                // For currently-active windows, give a 40% chance the user has already prayed.
+                if offset == 364 {
+                    if today < window.start { continue }
+                    if today < window.end {
+                        if rng.uniform() >= 0.4 { continue }
+                    }
+                }
+
                 let prayerMultiplier = perPrayerMultiplier(prayer)
                 let completionChance = min(0.96, baseCompletion * prayerMultiplier)
                 let didPray = rng.uniform() < completionChance
@@ -475,9 +485,13 @@ enum MockDataGenerator {
                 running = 0
             }
         }
-        // Current streak — walk back from today
+        // Current streak — walk back from today. If today isn't complete yet
+        // (later prayers still upcoming), don't reset to 0 — start from yesterday.
         var probe = today
         currentStreak = 0
+        if !allCompleteDays.contains(probe) {
+            probe = cal.date(byAdding: .day, value: -1, to: probe) ?? probe
+        }
         while allCompleteDays.contains(probe) {
             currentStreak += 1
             probe = cal.date(byAdding: .day, value: -1, to: probe) ?? probe
@@ -513,9 +527,13 @@ enum MockDataGenerator {
         let completed = records.filter { $0.prayerStatus != .missed }
         let prayedDays = Set(completed.map { cal.startOfDay(for: $0.prayerDate) })
 
-        // Walk back from today to compute current streak (per prayer)
+        // Walk back from today to compute current streak (per prayer). If today's
+        // entry isn't there yet (window hasn't passed), start from yesterday.
         var current = 0
         var probe = today
+        if !prayedDays.contains(probe) {
+            probe = cal.date(byAdding: .day, value: -1, to: probe) ?? probe
+        }
         while prayedDays.contains(probe) {
             current += 1
             probe = cal.date(byAdding: .day, value: -1, to: probe) ?? probe

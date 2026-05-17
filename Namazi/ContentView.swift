@@ -1,25 +1,28 @@
 import SwiftUI
 
+// Root tab. Order chosen to mirror time-of-day flow:
+//   Today (focus) → History (reflect) → Stats (progress) → Settings.
+
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 20) {
-            Image(systemName: "moon.stars.fill")
-                .resizable()
-                .font(.system(size: 60))
-                .foregroundStyle(.indigo)
+        TabView {
+            TodayView()
+                .tabItem { Label("Today", systemImage: "circle.hexagongrid.fill") }
 
-            Text("Namazi")
-                .font(.largeTitle)
-                .fontWeight(.bold)
+            HistoryView()
+                .tabItem { Label("History", systemImage: "square.grid.3x3.fill") }
 
-            Text("Your prayer journey starts here.")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+            StatsView()
+                .tabItem { Label("Stats", systemImage: "chart.bar.xaxis") }
+
+            SettingsView()
+                .tabItem { Label("Settings", systemImage: "gearshape.fill") }
         }
-        .padding()
+        .tint(PrayerStyle.upcoming)
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(PreviewContainer.shared)
 }

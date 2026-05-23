@@ -40,3 +40,9 @@ GoogleService-Info.plist
 *.env
 Secrets.swift
 Config.xcconfig
+
+# Web prototype
+web/node_modules/
+web/dist/
+web/.vite/
+web/*.local
